@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+
+    <!-- Balises pour le responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- Notre CSS custom -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="mb-5">
+    <nav class="container py-3 mb-3">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="mountain.html">Montagne</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="beaches.html">Plages</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Minimal responsive + columns -->
+    <main class="container">
+        <div class="row">
+            <!-- Content (les pages) -->
+            <div class="col-9">
+
+                <h1>La météo des plages</h1>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repellendus nisi illum
+                    necessitatibus
+                    officiis, quaerat aspernatur at animi sapiente expedita praesentium dignissimos. Unde iusto eveniet
+                    cum.
+                    Dolorum molestias accusamus vero.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit et eligendi cum officia. Neque
+                    dignissimos veniam libero itaque molestias doloribus delectus, corporis, quia dolores quasi suscipit
+                    maiores sunt? Qui, omnis?</p>
+
+            </div>
+
+            <!-- Sidebar (le widget) -->
+            <div class="col-3">
+            
+                <!-- Code du widget -->
+                <div id="widget">
+            
+                    <!-- Si ville sélectionnée -->
+                    <p><b>Bordeaux</b></p>
+                    <p>29-01-2020</p>
+                    <p><img src="images/sun-cloud.png"></p>
+                    <p>0°C / 10°C</p>
+            
+                    <!-- Si ville non sélectionnée -->
+                    <div>Sélectionnez une ville<br>dans la liste de gauche</div>
+            
+                </div>
+            
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+
+</html>

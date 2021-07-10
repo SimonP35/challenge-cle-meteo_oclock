@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+
+    <!-- Balises pour le responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- Notre CSS custom -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="mb-5">
+    <nav class="container py-3 mb-3">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="mountain.html">Montagne</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="beaches.html">Plages</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Minimal responsive + columns -->
+    <main class="container">
+        <div class="row">
+            <!-- Content (les pages) -->
+            <div class="col-9">
+
+                <h1 class="mb-5">Bienvenue sur la météo des villes !</h1>
+
+                <div class="item item--bg-snow">
+                    <div class="item--city"><a href="#">Annecy</a></div>
+                    <div class="item--forecast">29-01 : -4°C / 2°C</div>
+                </div>
+                <div class="item item--bg-rain">
+                    <div class="item--city"><a href="#">Biarritz</a></div>
+                    <div class="item--forecast">29-01 : -5°C / 0°C</div>
+                </div>
+                <div class="item item--bg-sun-cloud">
+                    <div class="item--city"><a href="#">Bordeaux</a></div>
+                    <div class="item--forecast">29-01 : 0°C / 10°C</div>
+                </div>
+                <div class="item item--bg-storm">
+                    <div class="item--city"><a href="#">Bruxelles</a></div>
+                    <div class="item--forecast">29-01 : -3°C / 5°C</div>
+                </div>
+                <div class="item item--bg-sun-cloud">
+                    <div class="item--city"><a href="#">Chambéry</a></div>
+                    <div class="item--forecast">29-01 : -2°C / 6°C</div>
+                </div>
+                <div class="item item--bg-snow">
+                    <div class="item--city"><a href="#">Grenoble</a></div>
+                    <div class="item--forecast">29-01 : -3°C / 3°C</div>
+                </div>
+                <div class="item item--bg-clouds">
+                    <div class="item--city"><a href="#">Lille</a></div>
+                    <div class="item--forecast">29-01 : 1°C / 7°C</div>
+                </div>
+                <div class="item item--bg-snow">
+                    <div class="item--city"><a href="#">Lyon</a></div>
+                    <div class="item--forecast">29-01 : 3°C / 12°C</div>
+                </div>
+                <div class="item item--bg-shower">
+                    <div class="item--city"><a href="#">Marseille</a></div>
+                    <div class="item--forecast">29-01 : -5°C / 5°C</div>
+                </div>
+                <div class="item item--bg-snow">
+                    <div class="item--city"><a href="#">Metz</a></div>
+                    <div class="item--forecast">29-01 : 2°C / 7°C</div>
+                </div>
+                <div class="item item--bg-shower">
+                    <div class="item--city"><a href="#">Montpellier</a></div>
+                    <div class="item--forecast">29-01 : 3°C / 11°C</div>
+                </div>
+                <div class="item item--bg-sun-cloud">
+                    <div class="item--city"><a href="#">Nantes</a></div>
+                    <div class="item--forecast">29-01 : 0°C / 6°C</div>
+                </div>
+                <div class="item item--bg-snow">
+                    <div class="item--city"><a href="#">Nice</a></div>
+                    <div class="item--forecast">29-01 : -3°C / 3°C</div>
+                </div>
+                <div class="item item--bg-shower">
+                    <div class="item--city"><a href="#">Paris</a></div>
+                    <div class="item--forecast">29-01 : 2°C / 11°C</div>
+                </div>
+                <div class="item item--bg-sun">
+                    <div class="item--city"><a href="#">Rouen</a></div>
+                    <div class="item--forecast">29-01 : 0°C / 8°C</div>
+                </div>
+                <div class="item item--bg-shower">
+                    <div class="item--city"><a href="#">Toulouse</a></div>
+                    <div class="item--forecast">29-01 : 1°C / 9°C</div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar (le widget) -->
+            <div class="col-3">
+
+                <!-- Code du widget -->
+                <div id="widget">
+
+                    <!-- Si ville sélectionnée -->
+                    <p><b>Bordeaux</b></p>
+                    <p>29-01-2020</p>
+                    <p><img src="images/sun-cloud.png"></p>
+                    <p>0°C / 10°C</p>
+
+                    <!-- Si ville non sélectionnée -->
+                    <div>Sélectionnez une ville<br>dans la liste de gauche</div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
