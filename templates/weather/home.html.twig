@@ -7,23 +7,44 @@
 {% block body %}
 
 <main class="container">
-<div class="row">
-    <!-- Content (les pages) -->
-    <div class="col-9">
-
+    <div class="row">
         <h1 class="mb-5">Bienvenue sur la météo des villes !</h1>
+    </div>
+    <div class="row">
+
+    <!-- Content (les pages) -->
+    <div class="col-4">
+
 
         <form action="{{ path('widget') }}" method="post">
 
-            {% for index, weather in weathers %}
+            {% for index, weather in weathers|slice(0, 8) %}
 
-                        <div class="item item--bg-{{ weather.weather }}">
-                            <div class="item--city">
-                                <button class="button" name="id" value="{{ index }}" type="submit" >{{ weather.city }}</button></div>
-                            <div class="item--forecast">{{ weather.date }} : {{ weather.min }}°C / {{ weather.max }}°C</div>
-                        </div>
+                            <div class="item item--bg-{{ weather.weather }}">
+                                <div class="item--city">
+                                    <button class="button" name="id" value="{{ index }}" type="submit" >{{ weather.city }}</button></div>
+                                <div class="item--forecast">{{ weather.date }} : {{ weather.min }}°C / {{ weather.max }}°C</div>
+                            </div>
 
-            {% endfor %} 
+            {% endfor %}
+
+        </form>
+
+    </div>
+
+    <div class="col-4">
+
+        <form action="{{ path('widget') }}" method="post">
+
+            {% for index, weather in weathers|slice(8, 16) %}
+
+                            <div class="item item--bg-{{ weather.weather }}">
+                                <div class="item--city">
+                                    <button class="button" name="id" value="{{ index }}" type="submit" >{{ weather.city }}</button></div>
+                                <div class="item--forecast">{{ weather.date }} : {{ weather.min }}°C / {{ weather.max }}°C</div>
+                            </div>
+
+            {% endfor %}
 
         </form>
 
