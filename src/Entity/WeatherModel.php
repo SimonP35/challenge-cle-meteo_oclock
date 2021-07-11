@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Entity;
+
 class WeatherModel
 {
     public static function getWeatherData()
@@ -17,6 +19,7 @@ class WeatherModel
     }
 
     private static $weatherData = [
+        
         [
             'city' => 'Annecy',
             'weather' => 'snow',
