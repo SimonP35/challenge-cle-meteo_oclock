@@ -1,3 +1,35 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Petit test Ici !{% endblock %}
+{% block title %}HOME{% endblock %}
+
+{% block menu_home %}active{% endblock %}
+
+{% block body %}
+
+<main class="container">
+<div class="row">
+    <!-- Content (les pages) -->
+    <div class="col-9">
+
+        <h1 class="mb-5">Bienvenue sur la météo des villes !</h1>
+
+        <form action="{{ path('widget') }}" method="post">
+
+            {% for index, weather in weathers %}
+
+                        <div class="item item--bg-{{ weather.weather }}">
+                            <div class="item--city">
+                                <button class="button" name="id" value="{{ index }}" type="submit" >{{ weather.city }}</button></div>
+                            <div class="item--forecast">{{ weather.date }} : {{ weather.min }}°C / {{ weather.max }}°C</div>
+                        </div>
+
+            {% endfor %} 
+
+        </form>
+
+    </div>
+
+{{ include( 'include/_sidebar.html.twig' )}}
+
+{% endblock %}
+

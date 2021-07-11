@@ -60,3 +60,13 @@ nav {
 .item--bg-sun {
     background-image: url('../images/sun.png');
 }
+
+.button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: #00F;
+    background: transparent;
+    cursor: pointer;
+}

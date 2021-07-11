@@ -1,0 +1,28 @@
+<!-- Sidebar (le widget) -->
+<div
+	class="col-3">
+
+	<!-- Code du widget -->
+	<div id="widget">
+
+		{% if weatherInWidget is not null %}
+
+			<!-- Si ville sélectionnée -->
+			<p>
+				<b>{{ weatherInWidget.city }}</b>
+			</p>
+			<p>{{ weatherInWidget.date }}</p>
+			<p><img src="images/{{ weatherInWidget.weather }}.png"></p>
+			<p>{{ weatherInWidget.min }}°C /
+				{{ weatherInWidget.max }}°C</p>
+
+		{% else %}
+
+			<!-- Si ville non sélectionnée -->
+			<div>Sélectionnez une ville<br>dans la liste de gauche</div>
+
+		{% endif %}
+
+	</div>
+
+</div></div></main>

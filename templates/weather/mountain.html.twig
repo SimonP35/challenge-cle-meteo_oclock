@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}MOUTAIN{% endblock %}
+
+{% block menu_moutain %}active{% endblock %}
+
+{% block body %}
+
+    <!-- Minimal responsive + columns -->
+    <main class="container">
+        <div class="row">
+            <!-- Content (les pages) -->
+            <div class="col-9">
+
+                <h1>La météo des montagnes</h1>
+
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam officia optio nam, porro accusamus
+                    ipsa. Repellendus ut expedita tempora, dolore rem explicabo sapiente aperiam eius, quibusdam dolores
+                    nulla, impedit sequi.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quae, dolorem provident at debitis,
+                    dolor nemo cum quidem eveniet aliquam odit eum consequuntur alias accusamus neque ab sed recusandae
+                    illum!</p>
+
+            </div>
+
+{{ include( 'include/_sidebar.html.twig' )}}
+
+{% endblock %}
+
