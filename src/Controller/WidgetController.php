@@ -12,13 +12,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class WidgetController extends AbstractController 
 {
     /**
-     * Undocumented function
+     * Fonction permettant de sélectionner une météo à mettre dans le widget
      *
-     * @Route("/widget", name="widget", methods="POST")
-     * @param Type $var
+     * @Route("/widget", name="widget", methods="POST")*
+     * @param SessionInterface $session
+     * @param Request $Request
      * @return Response
      */
-    public function widget(Request $request, SessionInterface $session)
+    public function widget(Request $request, SessionInterface $session): Response
     {
         // On récupère notre id se dans $_POST['id']
         $id = $request->request->get('id');
@@ -52,11 +53,25 @@ class WidgetController extends AbstractController
         $session->set('widget', $widget);
         // On ajoute un Flash Message
         $this->addFlash('success', 'Votre nouvelle météo favorite est celle de '.$widget['weather']['city'].' !');
-
-        //? Test condition (fonctionne mais semble inutile ^')
-        //? !empty($widget) ? $this->addFlash('success', 'Votre nouvelle météo favorite est celle de '.$widget['weather']['city'].' !') : $this->addFlash('primary', 'Vous pouvez séléctionner une météo favorite dans la liste ci-dessous :) !') ; 
-        
+     
         // On redirige
         return $this->redirectToRoute('home');
+    }
+
+    /**
+     * Fonction permettant l'effacement de la session en cours
+     *
+     * @Route("/logout", name="logout")
+     * @param SessionInterface $session
+     * @param Request $Request
+     * @return Response
+     */
+    public function logout(Request $request, SessionInterface $session): Response
+    {
+        $session->remove('widget');
+        $this->addFlash('danger', 'Vous avez fermé la session, vous n\'avez plus de météo favorite !');
+
+        return $this->redirect($request->headers->get('referer'));
+
     }
 }

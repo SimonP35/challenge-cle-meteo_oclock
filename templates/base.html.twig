@@ -21,17 +21,28 @@
     </head>
         <body class="mb-5">
             <nav class="container py-3 mb-3">
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link {% block menu_home %}{% endblock %}" href="{{ path( 'home' )}}">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% block menu_moutain %}{% endblock %}" href="{{ path( 'mountain' )}}">Montagne</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% block menu_beaches %}{% endblock %}" href="{{ path( 'beaches' )}}">Plages</a>
-                    </li>
-                </ul>
+                <div class="row">
+                    <div class="col-10">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link {% block menu_home %}{% endblock %}" href="{{ path( 'home' )}}">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% block menu_moutain %}{% endblock %}" href="{{ path( 'mountain' )}}">Montagne</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% block menu_beaches %}{% endblock %}" href="{{ path( 'beaches' )}}">Plages</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path( 'logout' )}}">Session_End</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
 
             {{ include('include/_flash_messages.html.twig') }}
