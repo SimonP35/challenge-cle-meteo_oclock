@@ -26,8 +26,8 @@ class WeatherController extends AbstractController
 
         // $widget != null ? $weatherInWidget = WeatherModel::getWeatherByCityIndex($widget['id']) : $weatherInWidget = $widget;
 
-        $widget != null ? : $weatherInWidget = $widget;
         $widget === null ? : $weatherInWidget = WeatherModel::getWeatherByCityIndex($widget['id']);
+        $widget != null ? : $weatherInWidget = $widget;
         $weatherInWidget != null ? : $this->addFlash('primary', 'Vous pouvez séléctionner une météo favorite dans la liste sur la page d\'accueil :) !');
         
         return $this->render('weather/home.html.twig', [
@@ -48,8 +48,8 @@ class WeatherController extends AbstractController
 
         // $widget != null ? $weatherInWidget = WeatherModel::getWeatherByCityIndex($widget['id']) : $weatherInWidget = $widget;
 
-        $widget != null ? : $weatherInWidget = $widget;
         $widget === null ? : $weatherInWidget = WeatherModel::getWeatherByCityIndex($widget['id']);
+        $widget != null ? : $weatherInWidget = $widget;
         $weatherInWidget != null ? : $this->addFlash('primary', 'Vous pouvez séléctionner une météo favorite dans la liste sur la page d\'accueil :) !');
        
         return $this->render('weather/mountain.html.twig', [
@@ -69,8 +69,8 @@ class WeatherController extends AbstractController
 
         // $widget != null ? $weatherInWidget = WeatherModel::getWeatherByCityIndex($widget['id']) : $weatherInWidget = $widget;
 
-        $widget != null ? : $weatherInWidget = $widget;
         $widget === null ? : $weatherInWidget = WeatherModel::getWeatherByCityIndex($widget['id']);
+        $widget != null ? : $weatherInWidget = $widget;
         $weatherInWidget != null ? : $this->addFlash('primary', 'Vous pouvez séléctionner une météo favorite dans la liste sur la page d\'accueil :) !');
 
         return $this->render('weather/beaches.html.twig', [
