@@ -30,7 +30,7 @@ class WeatherController extends AbstractController
 
         $widget === null ? : $weatherInWidget = WeatherModel::getWeatherByCityIndex($widget['id']);
         $widget != null ? : $weatherInWidget = $widget;
-        $weatherInWidget != null ? : $this->addFlash('primary', 'Astuce : Vous pouvez séléctionner une météo favorite en cliquant sur le nom d\'une ville dans la liste sur la page d\'accueil :) !');
+        $weatherInWidget != null ? : $this->addFlash('primary', '🌣🌣🌣 Astuce : Vous pouvez séléctionner une météo favorite en cliquant sur le nom d\'une ville dans la liste sur la page d\'accueil :) ! 🌣🌣🌣');
         
         return $this->render('weather/home.html.twig', [
             'weathers' => $weathers,
