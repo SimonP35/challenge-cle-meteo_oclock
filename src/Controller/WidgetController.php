@@ -68,7 +68,11 @@ class WidgetController extends AbstractController
      */
     public function logout(Request $request, SessionInterface $session): Response
     {
-        $session->remove('widget');
+        $widget = $session->get('widget', []);
+
+        empty($widget) ?
+        $this->addFlash('danger', 'Il n\'y a aucune session en cours !') : 
+        $session->remove('widget') && 
         $this->addFlash('danger', 'Vous avez fermé la session, vous n\'avez plus de météo favorite !');
 
         return $this->redirect($request->headers->get('referer'));
