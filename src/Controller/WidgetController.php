@@ -32,17 +32,12 @@ class WidgetController extends AbstractController
             throw $this->createNotFoundException('La météo demandée n\'existe pas !');
         }
 
-        // On stock notre "id" en session
-        // Le widget (tableau) existant OU un widget vide
         $widget = $session->get('widget', []); // $widget = $_SESSION['widget'];
 
-        // On va stocker l'id de la weather à la clé du tableau widget
         if ( !array_key_exists($id, $widget) ) {
-            // On va ajouter 1 fois l'oiseau dans le panier
 
-            // Via un tableau associatif qui va structurer le contenu du panier
             $weatherInWidget = [
-                'weather' => $weather, // $bird = toutes les infos de l'oiseau (via le Model)
+                'weather' => $weather, 
                 'id' => $id,
             ];
 
@@ -56,8 +51,11 @@ class WidgetController extends AbstractController
         // On remet le nouveau panier dans la session
         $session->set('widget', $widget);
         // On ajoute un Flash Message
-        $this->addFlash('success', 'Nouvelle météo sélectionnée !');
+        $this->addFlash('success', 'Votre nouvelle météo favorite est celle de '.$widget['weather']['city'].' !');
 
+        //? Test condition (fonctionne mais semble inutile ^')
+        //? !empty($widget) ? $this->addFlash('success', 'Votre nouvelle météo favorite est celle de '.$widget['weather']['city'].' !') : $this->addFlash('primary', 'Vous pouvez séléctionner une météo favorite dans la liste ci-dessous :) !') ; 
+        
         // On redirige
         return $this->redirectToRoute('home');
     }

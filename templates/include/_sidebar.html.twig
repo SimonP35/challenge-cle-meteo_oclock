@@ -12,9 +12,8 @@
 				<b>{{ weatherInWidget.city }}</b>
 			</p>
 			<p>{{ weatherInWidget.date }}</p>
-			<p><img src="images/{{ weatherInWidget.weather }}.png"></p>
-			<p>{{ weatherInWidget.min }}°C /
-				{{ weatherInWidget.max }}°C</p>
+			<p><img src="{{ asset( 'images/' ~ weatherInWidget.weather ~ '.png' ) }}"></p>
+			<p>{{ weatherInWidget.min }}°C / {{ weatherInWidget.max }}°C</p>
 
 		{% else %}
 
