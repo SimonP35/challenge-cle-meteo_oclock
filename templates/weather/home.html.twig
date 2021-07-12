@@ -13,27 +13,29 @@
     <div class="row">
 
     <div class="col-4">
-        <form action="{{ path('widget') }}" method="post">
+        {# <form action="" method="post"> #}
             {% for index, weather in weathers|slice(0, 8) %}
                 <div class="item item--bg-{{ weather.weather }}">
                     <div class="item--city">
-                        <button class="button btn btn-link" name="id" value="{{ index }}" type="submit" >{{ weather.city }}</button></div>
+                        {# <button class="button btn btn-link" name="id" value="{{ index }}" type="submit" >{{ weather.city }}</button></div> #}
+                        <a href="/widget/{{ index }}">{{ weather.city }}</a></div>
                     <div class="item--forecast">{{ weather.date }} : {{ weather.min }}°C / {{ weather.max }}°C</div>
                 </div>
             {% endfor %}
-        </form>
+        {# </form> #}
     </div>
 
     <div class="col-4">
-        <form action="{{ path('widget') }}" method="post">
+        {# <form action="" method="post"> #}
             {% for index, weather in weathers|slice(8, 16, 8) %}
                 <div class="item item--bg-{{ weather.weather }}">
                     <div class="item--city">
-                        <button class="button btn btn-link" name="id" value="{{ index }}" type="submit" >{{ weather.city }}</button></div>
+                        {# <button class="button btn btn-link" name="id" value="{{ index }}" type="submit" >{{ weather.city }}</button></div> #}
+                        <a href="/widget/{{ index }}">{{ weather.city }}</a></div>
                     <div class="item--forecast">{{ weather.date }} : {{ weather.min }}°C / {{ weather.max }}°C</div>
                 </div>
             {% endfor %}
-        </form>
+        {# </form> #}
     </div>
 
 {{ include( 'include/_sidebar.html.twig' )}}

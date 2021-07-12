@@ -5,15 +5,15 @@
 	<!-- Code du widget -->
 	<div id="widget">
 
-		{% if weatherInWidget is not null %}
+		{% if app.session.get('widget') is not null %}
 
 			<!-- Si ville sélectionnée -->
 			<p>
-				<b>{{ weatherInWidget.city }}</b>
+				<b>{{ app.session.get('widget').weather.city }}</b>
 			</p>
-			<p>{{ weatherInWidget.date }}</p>
-			<p><img src="{{ asset( 'images/' ~ weatherInWidget.weather ~ '.png' ) }}"></p>
-			<p>{{ weatherInWidget.min }}°C / {{ weatherInWidget.max }}°C</p>
+			<p>{{ app.session.get('widget').weather.date }}</p>
+			<p><img src="{{ asset( 'images/' ~ app.session.get('widget').weather.weather ~ '.png' ) }}"></p>
+			<p>{{ app.session.get('widget').weather.min }}°C / {{ app.session.get('widget').weather.max }}°C</p>
 
 		{% else %}
 

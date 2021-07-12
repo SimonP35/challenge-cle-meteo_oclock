@@ -13,18 +13,19 @@ class WidgetController extends AbstractController
 {
     /**
      * Fonction permettant de sélectionner une météo à mettre dans le widget
-     *
-     * @Route("/widget", name="widget", methods="POST")*
+     * // @Route("/widget", name="widget", methods="POST") //? Méthode POST
+     * @Route("/widget/{id}", name="widget", methods="GET") //? Méthode GET
      * @param SessionInterface $session
      * @param Request $Request
      * @return Response
      */
-    public function widget(Request $request, SessionInterface $session): Response
+    public function widget(int $id, SessionInterface $session, Request $request): Response
     {
+        //? Méthode POST
         // On récupère notre id se dans $_POST['id']
-        $id = $request->request->get('id');
-        // dd($id);
+        // $id = $request->request->get('id');
 
+        //? Méthode GET
         // On récupère la météo concernée
         $weather = WeatherModel::getWeatherByCityIndex($id);
 
@@ -52,7 +53,7 @@ class WidgetController extends AbstractController
         // On remet le nouveau panier dans la session
         $session->set('widget', $widget);
         // On ajoute un Flash Message
-        $this->addFlash('success', 'Votre nouvelle météo favorite est celle de '.$widget['weather']['city'].' !');
+        $this->addFlash('success', '🌣🌣🌣 Votre nouvelle météo favorite est celle de '.$widget['weather']['city'].' ! 🌣🌣🌣');
      
         // On redirige
         return $this->redirectToRoute('home');
@@ -71,9 +72,9 @@ class WidgetController extends AbstractController
         $widget = $session->get('widget', []);
 
         empty($widget) ?
-        $this->addFlash('danger', 'Il n\'y a aucune session en cours !') : 
+        $this->addFlash('danger', '🌣🌣🌣 Il n\'y a aucune session en cours ! 🌣🌣🌣') : 
         $session->remove('widget') && 
-        $this->addFlash('danger', 'Vous avez fermé la session, vous n\'avez plus de météo favorite !');
+        $this->addFlash('danger', '🌣🌣🌣 Vous avez fermé la session, vous n\'avez plus de météo favorite ! 🌣🌣🌣');
 
         return $this->redirect($request->headers->get('referer'));
 
