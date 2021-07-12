@@ -50,7 +50,7 @@ class WidgetController extends AbstractController
             $widget = $widget;
         }
 
-        // On remet le nouveau panier dans la session
+        // On remet le nouveau widget dans la session
         $session->set('widget', $widget);
         // On ajoute un Flash Message
         $this->addFlash('success', '🌣🌣🌣 Votre nouvelle météo favorite est celle de '.$widget['weather']['city'].' ! 🌣🌣🌣');

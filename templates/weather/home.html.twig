@@ -17,8 +17,13 @@
             {% for index, weather in weathers|slice(0, 8) %}
                 <div class="item item--bg-{{ weather.weather }}">
                     <div class="item--city">
+
+                        {# Solution avec button et méthode POST + balise form #}
                         {# <button class="button btn btn-link" name="id" value="{{ index }}" type="submit" >{{ weather.city }}</button></div> #}
+
+                        {# Solution avec lien <a> et méthode GET #}
                         <a href="/widget/{{ index }}">{{ weather.city }}</a></div>
+                        
                     <div class="item--forecast">{{ weather.date }} : {{ weather.min }}°C / {{ weather.max }}°C</div>
                 </div>
             {% endfor %}
@@ -30,8 +35,13 @@
             {% for index, weather in weathers|slice(8, 16, 8) %}
                 <div class="item item--bg-{{ weather.weather }}">
                     <div class="item--city">
+
+                        {# Solution avec button et méthode POST + balise form #}
                         {# <button class="button btn btn-link" name="id" value="{{ index }}" type="submit" >{{ weather.city }}</button></div> #}
+
+                        {# Solution avec lien <a> et méthode GET #}
                         <a href="/widget/{{ index }}">{{ weather.city }}</a></div>
+
                     <div class="item--forecast">{{ weather.date }} : {{ weather.min }}°C / {{ weather.max }}°C</div>
                 </div>
             {% endfor %}
